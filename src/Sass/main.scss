@@ -1,0 +1,25 @@
+@use './albors/albors.scss';
+
+$first_color : #EFE6DD;
+$second_color : #231F20;
+$third_color : #94B49F;
+$forth_color : #5C6A60;
+
+body{
+    font-family: system-ui, sans-serif;
+}
+.bg-1{
+    background-color: $first_color;
+}
+.bg-2{
+    background-color: $second_color;
+}
+.bg-3{
+    background-color: $third_color;
+}
+.bg-4{
+    background-color: $forth_color;
+}
+a{
+    color: $forth_color;
+}

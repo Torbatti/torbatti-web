@@ -1,0 +1,23 @@
+.a-box-row{
+    width: 100%;
+}
+.a-box-col{
+    height: 100%;
+}
+.a-box-page{
+    width: 100vw;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+@media (min-width: 768px) {
+    .a-vbox{
+        margin: auto;
+        width: 720px;
+    }
+}
+@media (min-width: 1024px) {
+    .a-vbox-big{
+        margin: auto;
+        width: 1024px;
+    }
+}

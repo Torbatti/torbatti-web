@@ -1,0 +1,45 @@
+---
+// Layouts
+import BaseLayoutExtented from "../../layouts/BaseLayouts/BaseLayoutExtented.astro";
+
+// Components
+import MoviesCard from "../../components/Cards/MoviesCard.astro";
+
+//
+const allPosts = await Astro.glob('../content/movies/*.md');
+---
+
+<BaseLayoutExtented title="Blog">
+        <div class="a-vbox a-vbox-big grid">
+            {allPosts.map((post) => 
+                <MoviesCard 
+                    url={post.url}
+                    title={post.frontmatter.title}
+                    type={post.frontmatter.type}
+                    img = {post.frontmatter.image}
+                    release_date = {post.frontmatter.release_date}
+                    rate = {post.frontmatter.rate}
+                />)
+            }
+        </div>
+</BaseLayoutExtented>
+
+<style lang="scss"> 
+    .grid{
+        display: grid;
+        justify-items: center;
+        
+        grid-template-columns: repeat(1, 1fr);
+        @media (min-width: 640px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+    }
+    
+</style>

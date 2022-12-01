@@ -1,0 +1,37 @@
+---
+
+---
+<nav class="a-vbox a-vbox-big">
+    <div class="links a-box-row">
+        <a href="https://github.com/Torbatti/torbatti-web">گیت هاب</a>
+        <a href="/main/game">بازی</a>
+        <a href="/main/movie">فیلم</a>
+        <a href="/main/book">کتاب</a>
+        <a href="/main/blog">بلاگ</a>
+        <a href="/">صفحه اصلی</a>
+    </div>
+</nav>
+
+<style lang="scss">
+    nav{
+        // border: 2px dashed black;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .links{
+        display: flex;
+        justify-self: reverse;
+        justify-content: space-between;
+        @media (min-width: 768px) {
+            justify-content: right;
+        }
+    }
+    .links a{
+        padding:0 .5rem;
+        &:last-child{
+            padding-right: 0 0;
+        }
+    }
+</style>

@@ -1,0 +1,21 @@
+%header{
+    list-style: none;
+}
+.a-h1{
+    @extend %header;   
+}
+.a-h2{
+    @extend %header;   
+}
+.a-h3{
+    @extend %header;
+}
+.a-h4{
+    @extend %header;
+}
+.a-h5{
+    @extend %header;
+}
+.a-h6{
+    @extend %header;
+}
