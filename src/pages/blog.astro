@@ -1,0 +1,50 @@
+---
+// Layouts
+import BaseLayoutExtented from "../layouts/base/BaseLayoutExtented.astro";
+
+const blogPosts = await Astro.glob('./content/posts/*.md');
+---
+
+<BaseLayoutExtented title="Torbatti">
+    <main class="a-vbx-rsp">
+
+        
+        {blogPosts.map((post) =>
+
+            <div class="post">    
+                <a href={post.url}>
+                    <p class="title">{post.frontmatter.title}</p>
+                </a>
+                <p class="time">{post.frontmatter.time}</p>
+            </div>
+
+        )}
+    </main>
+</BaseLayoutExtented>
+
+<style lang="scss">
+    main{
+        display: flex;
+        justify-content: center;
+        @media screen and (min-width:768px) {
+            justify-content: end;
+        }
+        .post{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 2px solid black;
+            margin-left: 2rem;
+            @media screen and (min-width:768px) {
+                justify-items: end;
+                align-items: flex-end;
+                padding: .5rem;
+                flex-wrap: wrap;
+            }
+        }
+        .title{
+            padding-top: 1rem;
+            padding-bottom: .5rem;
+        }
+    }
+</style>
